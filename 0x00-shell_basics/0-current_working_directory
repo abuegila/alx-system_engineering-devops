@@ -1,7 +1,0 @@
-#!/bin/bash
-<<<<<<< HEAD
-dir=$(cd "$(dirname "${BASH_SOURCE[0]}")"; echo "$PWD")
-echo "$dir"
-=======
-echo "$(cd "$(dirname "${BASH_SOURCE[0]}")"
->>>>>>> 15c6a8318aa0ca4d58a1264ebe7fe827d122512e
