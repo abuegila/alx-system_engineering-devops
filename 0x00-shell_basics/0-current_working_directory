@@ -1,2 +1,5 @@
 #!/bin/bash
-# This script prints the absolute path of the current working directory
+# This script prints the absolute path of its own directory
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "$script_dir"
