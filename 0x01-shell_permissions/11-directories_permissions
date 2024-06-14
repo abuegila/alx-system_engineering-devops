@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d ! -perm 755 -exec chmod 755 {}
+chmod u+x,g+x,o+x */
