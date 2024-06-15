@@ -84,10 +84,6 @@ This project is part of the **alx-system_engineering-devops** repository. It foc
 - **File:** [103-Star_Wars](103-Star_Wars)
 - **Command:** `telnet towel.blinkenlights.nl`
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Author
 
 [Yusuf Abu Egila](https://github.com/abuegila)
