@@ -1,2 +1,2 @@
 #!/bin/bash
-nl | grep '^[13579]'
+nl | grep '^[13579]' | sort -n
