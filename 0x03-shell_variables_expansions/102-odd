@@ -1,2 +1,2 @@
 #!/bin/bash
-nl -ba ff.txt | grep -E '^[[:space:]]*[0-9]*[13579][[:space:]]' | cut -f2-
+cat -n | cut -b 6- | grep ^[13579] | cut -f2
