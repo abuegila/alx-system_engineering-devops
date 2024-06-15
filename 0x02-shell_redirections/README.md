@@ -116,10 +116,6 @@ This project is part of the **alx-system_engineering-devops** repository. It con
 - **File:** [103-the_biggest_fan](103-the_biggest_fan)
 - **Command:** `awk '{print $1}' | sort | uniq -c | sort -nr | head -n 11`
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Author
 
 [Yusuf Abu Egila](https://github.com/abuegila)
