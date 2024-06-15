@@ -1,92 +1,120 @@
-# Shell Permissions Project
+# Shell Redirections Project
 
 ## Overview
 
-This project is part of the **alx-system_engineering-devops** repository. It focuses on understanding and managing file and directory permissions in a Unix-based system. Below are the tasks, their objectives, and the respective commands used to accomplish them.
+This project is part of the **alx-system_engineering-devops** repository. It contains scripts written in Bash that demonstrate various concepts related to shell redirections in Unix-based systems. Each script focuses on different aspects of shell redirections, including input redirection, output redirection, and redirection of standard input/output streams.
 
 ## Tasks
 
 **Note:** Always start your script files with `#!/bin/bash`. Make the script executable with `chmod u+x <filename>`.
 
-### 0. Create a Script that Changes Your User ID to `betty`
-- **File:** [0-iam_betty](0-iam_betty)
-- **Command:** `su - betty`
+### 0. Hello World
+- **File:** [0-hello_world](0-hello_world)
+- **Command:** `echo "Hello, World"`
 
-### 1. Write a Script that Prints the Effective User ID of the Current User
-- **File:** [1-who_am_i](1-who_am_i)
-- **Command:** `id -u`
+### 1. Confused Smiley
+- **File:** [1-confused_smiley](1-confused_smiley)
+- **Command:** `echo "(Ôo)'"`
 
-### 2. Write a Script that Prints All the Groups the Current User is Part Of
-- **File:** [2-groups](2-groups)
-- **Command:** `groups`
+### 2. Let's Display a File
+- **File:** [2-hellofile](2-hellofile)
+- **Command:** `cat /etc/passwd`
 
-### 3. Write a Script that Changes the Owner of the File `hello` to the User `betty`
-- **File:** [3-new_owner](3-new_owner)
-- **Command:** `chown betty hello`
+### 3. What About 2?
+- **File:** [3-twofiles](3-twofiles)
+- **Command:** `cat /etc/passwd /etc/hosts`
 
-### 4. Write a Script that Creates an Empty File Called `hello`
-- **File:** [4-empty](4-empty)
-- **Command:** `touch hello`
+### 4. Last Lines of a File
+- **File:** [4-lastlines](4-lastlines)
+- **Command:** `tail /etc/passwd`
 
-### 5. Write a Script that Adds Execute Permission to the Owner of the File `hello`
-- **File:** [5-execute](5-execute)
-- **Command:** `chmod u+x hello`
+### 5. I'd Prefer the First Ones Actually
+- **File:** [5-firstlines](5-firstlines)
+- **Command:** `head /etc/passwd`
 
-### 6. Write a Script that Adds Execute Permission to the Owner and the Group Owner, and Read Permission to Other Users, to the File `hello`
-- **File:** [6-multiple_permissions](6-multiple_permissions)
-- **Command:** `chmod u+x,g+x,o+r hello`
+### 6. Line #2
+- **File:** [6-third_line](6-third_line)
+- **Command:** `sed -n '3p' iacta`
 
-### 7. Write a Script that Adds Execution Permission to the Owner, the Group Owner and the Other Users, to the File `hello`
-- **File:** [7-everybody](7-everybody)
-- **Command:** `chmod a+x hello`
+### 7. It Is a Good File That Cuts Iron Without Making a Noise
+- **File:** [7-file](7-file)
+- **Command:** `echo "Holberton School" > '\*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)`
 
-### 8. Write a Script that Sets the Permission to the File `hello` as Follows:
-  - Owner: no permission at all
-  - Group: no permission at all
-  - Other users: all the permissions
-- **File:** [8-James_Bond](8-James_Bond)
-- **Command:** `chmod 007 hello`
+### 8. Save Current State of Directory
+- **File:** [8-cwd_state](8-cwd_state)
+- **Command:** `ls -la > ls_cwd_content`
 
-### 9. Write a Script that Sets the Mode of the File `hello` to this:
-  - `-rwxr-x-wx 1 julien julien 23 Sep 20 14:25 hello`
-- **File:** [9-John_Doe](9-John_Doe)
-- **Command:** `chmod 753 hello`
+### 9. Duplicate Last Line
+- **File:** [9-duplicate_last_line](9-duplicate_last_line)
+- **Command:** `tail -n 1 iacta >> iacta`
 
-### 10. Write a Script that Sets the Mode of the File `hello` the Same as `olleh`’s Mode
-- **File:** [10-mirror_permissions](10-mirror_permissions)
-- **Command:** `chmod --reference=olleh hello`
+### 10. No More Javascript
+- **File:** [10-no_more_js](10-no_more_js)
+- **Command:** `find . -type f -name "*.js" -delete`
 
-### 11. Create a Script that Adds Execute Permission to All Subdirectories of the Current Directory for the Owner, the Group Owner and All Other Users
-- **File:** [11-directories_permissions](11-directories_permissions)
-- **Command:** `chmod -R a+X .`
+### 11. Don't Just Count Your Directories, Make Your Directories Count
+- **File:** [11-directories](11-directories)
+- **Command:** `find . -mindepth 1 -type d | wc -l`
 
-### 12. Create a Script that Creates a Directory Called `my_dir` with Permissions 751 in the Working Directory
-- **File:** [12-directory_permissions](12-directory_permissions)
-- **Command:** `mkdir -m 751 my_dir`
+### 12. Whats New
+- **File:** [12-newest_files](12-newest_files)
+- **Command:** `ls -t | head -n 10`
 
-### 13. Write a Script that Changes the Group Owner to `school` for the File `hello`
-- **File:** [13-change_group](13-change_group)
-- **Command:** `chown :school hello`
+### 13. Being Unique is Better Than Being Perfect
+- **File:** [13-unique](13-unique)
+- **Command:** `sort | uniq -u`
 
-### 14. Write a Script that Changes the Owner to `vincent` and the Group Owner to `staff` for All the Files and Directories in the Working Directory
-- **File:** [100-change_owner_and_group](100-change_owner_and_group)
-- **Command:** `chown vincent:staff *`
+### 14. It Must Be in That File
+- **File:** [14-findthatword](14-findthatword)
+- **Command:** `grep root /etc/passwd`
 
-### 15. Write a Script that Changes the Owner and the Group Owner of `_hello` to `vincent` and `staff` Respectively
-- **File:** [101-symbolic_link_permissions](101-symbolic_link_permissions)
-- **Command:** `chown -h vincent:staff _hello`
+### 15. Count That Word
+- **File:** [15-countthatword](15-countthatword)
+- **Command:** `grep -c bin /etc/passwd`
 
-### 16. Write a Script that Changes the Owner of the File `hello` to `betty` Only If It Is Owned by the User `guillaume`
-- **File:** [102-if_only](102-if_only)
-- **Command:** `chown --from=guillaume betty hello`
+### 16. What's Next?
+- **File:** [16-whatsnext](16-whatsnext)
+- **Command:** `grep -A 3 root /etc/passwd`
 
-### 17. Write a Script that Will Play the StarWars IV Episode in the Terminal
-- **File:** [103-Star_Wars](103-Star_Wars)
-- **Command:** `telnet towel.blinkenlights.nl`
+### 17. I Hate Bins
+- **File:** [17-hidethisword](17-hidethisword)
+- **Command:** `grep -v bin /etc/passwd`
 
-### 18. Write a Script that Displays the Permissions of the File `hello`
-- **File:** [18-commas](18-commas)
-- **Command:** `ls -l -m hello`
+### 18. Letters Only Please
+- **File:** [18-letteronly](18-letteronly)
+- **Command:** `grep '^[[:alpha:]]' /etc/ssh/sshd_config`
+
+### 19. A to Z
+- **File:** [19-AZ](19-AZ)
+- **Command:** `tr Ac Ze`
+
+### 20. Without C, You Would Live in Hiago
+- **File:** [20-hiago](20-hiago)
+- **Command:** `tr -d cC`
+
+### 21. Reverse
+- **File:** [21-reverse](21-reverse)
+- **Command:** `rev`
+
+### 22. DJ Cut Killer
+- **File:** [22-users_and_homes](22-users_and_homes)
+- **Command:** `awk -F: '{ print $1 ": " $6 }' /etc/passwd`
+
+### 23. Empty Casks Make the Most Noise
+- **File:** [100-empty_casks](100-empty_casks)
+- **Command:** `find . -empty -type f -o -empty -type d`
+
+### 24. GIFs
+- **File:** [101-gifs](101-gifs)
+- **Command:** `find . -type f -name "*.gif"`
+
+### 25. Acrostic
+- **File:** [102-acrostic](102-acrostic)
+- **Command:** `cut -c 1 | tr -d '\n'`
+
+### 26. The Biggest Fan
+- **File:** [103-the_biggest_fan](103-the_biggest_fan)
+- **Command:** `awk '{print $1}' | sort | uniq -c | sort -nr | head -n 11`
 
 ## License
 
@@ -94,8 +122,8 @@ This project is licensed under the MIT License.
 
 ## Author
 
-[Your Name](https://github.com/abuegila)
+[Yusuf Abu Egila](https://github.com/abuegila)
 
 ## Repository Link
 
-[alx-system_engineering-devops](https://github.com/abuegila/alx-system_engineering-devops/tree/master/0x01-shell_permissions)
+[alx-system_engineering-devops](https://github.com/abuegila/alx-system_engineering-devops/tree/master/0x02-shell_redirections)
