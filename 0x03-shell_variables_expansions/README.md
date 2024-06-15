@@ -95,11 +95,8 @@ This project is part of the alx-system_engineering-devops repository. It focuses
 **Description:** This script adds the two numbers stored in the environment variables `WATER` and `STIR` and prints the result as a number in base `bestchol`, performing arithmetic in a custom base system.  
 **Command:** `echo $((WATER + STIR)) | tr '0123456789' 'bestchol'`
 
-## License
-This project is licensed under the MIT License.
-
 ## Author
-Yusuf Abu Egila
+[Yusuf Abu Egila](https://github.com/abuegila)
 
 ## Repository Link
 [alx-system_engineering-devops](https://github.com/abuegila/alx-system_engineering-devops/tree/master/0x03-shell_variables_expansions)
